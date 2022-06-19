@@ -3,12 +3,9 @@
 #
 #! /usr/bin/python3
 import sys
-elements = []
-if __name__ == '__main__':
 
+if __name__ == "__main__":
 
     for line in sys.stdin:
-        lista=line.split(",")[1]
-
-        sys.stdout.write(line)
-            
+        for word in line.split()[0]:
+            sys.stdout.write("{}\t1\n".format(word))

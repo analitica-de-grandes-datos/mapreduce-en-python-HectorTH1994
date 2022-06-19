@@ -2,15 +2,26 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 #! /usr/bin/python3
+
 import sys
-elements = []
+
 if __name__ == '__main__':
 
-    def take_element(element):
-        return element.split(",")[0]
+    curkey = None
+    total = 0
+
     for line in sys.stdin:
-        elements.append(line)
-    else:
-        elements = sorted(elements, key = take_element)
-        for element in elements:
-            sys.stdout.write(element)
+
+        key, val = line.split("\t")
+        val = int(val)
+
+        if key == curkey:
+            total += val
+        else:
+            if curkey is not None:
+                sys.stdout.write("{}\t{}\n".format(curkey, total))
+
+            curkey = key
+            total = val
+
+    sys.stdout.write("{}\t{}\n".format(curkey, total))

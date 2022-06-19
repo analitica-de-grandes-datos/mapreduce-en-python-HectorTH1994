@@ -4,7 +4,6 @@
 # reference https://docs.python.org/3/howto/sorting.html
 import sys
 
-
 elements = []
 
 def take_element(element):

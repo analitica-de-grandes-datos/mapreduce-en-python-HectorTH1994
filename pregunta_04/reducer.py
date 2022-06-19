@@ -7,7 +7,7 @@ elements = []
 if __name__ == '__main__':
 
     def take_element(element):
-        return element.split(",")[1]
+        return element.split(",")[0]
     for line in sys.stdin:
         elements.append(line)
     else:

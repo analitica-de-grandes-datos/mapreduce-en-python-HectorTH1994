@@ -19,14 +19,13 @@ if __name__ == '__main__':
 
     for line in sys.stdin:
         elements.append(line)
+        letra = take_word(line)
+        if letra not in letras:
+            letras.extend(letra+"\n")
+
     else:
         elements = sorted(elements, key = take_element)
     
-        for linea in elements:
-            letra = take_word(linea)
-            
-            if letra not in letras:
-                letras.extend(letra+"\n")
 
         for letra in letras:
             for linea in elements:

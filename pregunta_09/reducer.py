@@ -25,6 +25,6 @@ if __name__ == '__main__':
         elements = sorted(elements, key = take_element)
 
         for element in elements:
-            if contador < 5:
+            if contador < 6:
                 sys.stdout.write(element)
                 contador+=1
